@@ -62,7 +62,7 @@
     /* Hero */
   .hero {
   /* solid fallback behind the logo */
-  background: #111 url('images/hero.jpg') no-repeat center;
+  background: #ffffff url('images/hero.jpg') no-repeat center;
   background-size: contain;         /* keep logo proportions */
   min-height: 60vh;
 
@@ -107,14 +107,18 @@
     #times ul.features li{ padding:.25rem 0 .25rem 1.75rem; }
 
     /* Scroll image divider */
-.scroll-image {
-  background: url('images/scroll.jpg') center center / cover no-repeat;
-  min-height: 400px;   /* nice height */
-  width: 100%;
-  background-attachment: fixed;   /* parallax for desktop */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.scroll-image{
+  background: url('images/scroll.jpg') no-repeat center / cover fixed;
+  min-height: clamp(320px, 45vw, 560px);
+}
+
+/* touch devices: don’t crop, just fit the whole image */
+@media (hover: none), (pointer: coarse){
+  .scroll-image{
+    background-size: contain;
+    background-color: #ffffff;   /* letterbox bars */
+    background-attachment: scroll;
+  }
 }
 
     /* Location card */
@@ -138,11 +142,6 @@ header nav ul li a img:hover {
 }
     
  /* Touch devices / mobile fallback */
-@media (hover: none), (pointer: coarse) {
-  .scroll-image {
-    background-attachment: scroll;  /* drop parallax on touch */
-  }
-}
 
 @media (max-width:768px) {
   h1 { font-size: 2rem; }
@@ -281,5 +280,6 @@ header nav ul li a img:hover {
   </footer>
 </body>
 </html>
+
 
 
