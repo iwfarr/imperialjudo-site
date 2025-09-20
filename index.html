@@ -60,18 +60,31 @@
     nav a:hover, nav a:focus { color:var(--secondary); outline:none; }
 
     /* Hero */
-   .hero {
-  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-              url('images/hero.jpg') no-repeat center center;
-  background-size: contain;
-  min-height: 60vh;   /* hero section fills most of the screen */
+  .hero {
+  /* solid fallback behind the logo */
+  background: #111 url('images/hero.jpg') no-repeat center;
+  background-size: contain;         /* keep logo proportions */
+  min-height: 60vh;
+
   display: flex;
-  align-items: flex-end; /* move content lower */
+  align-items: flex-end;            /* keep text lower */
   justify-content: center;
   text-align: center;
   color: #fff;
   padding: 3rem 1rem;
+  /* make sure these are NOT present anywhere:
+     filter: grayscale(100%);
+     linear-gradient(...) in background
+  */
 }
+
+.hero .panel {
+  background: rgba(0,0,0,.45);
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
     h1{ font-size:2.5rem; margin:0 0 1rem; text-shadow:1px 1px 3px rgba(0,0,0,.8); }
     .subhead{ font-size:1.25rem; margin:0 auto 2rem; text-shadow:1px 1px 3px rgba(0,0,0,.8); max-width:600px; }
 
@@ -143,13 +156,14 @@
 
   <main>
     <!-- HERO -->
-   <section class="hero" aria-label="Imperial Judo Club hero image">
- 	 <div>
-    	<h1>Imperial Judo Club</h1>
-    	<p>Family Judo, fitness, and fun in Gorseinon since 1982</p>
-    	<a href="https://www.facebook.com/ImperialJudoClub" class="btn">Message Us on Facebook</a>
-  	</div>
-   </section>
+<section class="hero">
+  <div class="panel">
+    <h1>Imperial Judo Club</h1>
+    <p>Family Judo, fitness, and fun in Gorseinon since 1982</p>
+    <a href="https://www.facebook.com/ImperialJudo" class="btn">Message Us on Facebook</a>
+  </div>
+</section>
+
 
 
     <!-- ABOUT -->
