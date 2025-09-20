@@ -108,15 +108,16 @@
 
     /* Scroll image divider */
 .scroll-image{
-  background: url('images/scroll.jpg') no-repeat center / cover fixed;
-  min-height: clamp(320px, 45vw, 560px);
+  background: url('images/scroll.jpg') center center / contain no-repeat fixed;
+  background-color: #fff;                 /* letterbox bars instead of grey */
+  min-height: clamp(320px, 45vw, 560px);  /* responsive height */
+  width: 100%;
 }
 
-/* touch devices: don’t crop, just fit the whole image */
+
+/* Touch devices: no fixed (mobile can’t parallax reliably) */
 @media (hover: none), (pointer: coarse){
   .scroll-image{
-    background-size: contain;
-    background-color: #ffffff;   /* letterbox bars */
     background-attachment: scroll;
   }
 }
@@ -280,6 +281,7 @@ header nav ul li a img:hover {
   </footer>
 </body>
 </html>
+
 
 
 
