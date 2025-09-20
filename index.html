@@ -107,16 +107,15 @@
     #times ul.features li{ padding:.25rem 0 .25rem 1.75rem; }
 
     /* Scroll image divider */
-  .scroll-image {
-  background: url('images/scroll.jpg') no-repeat center center/cover;
-  min-height: 400px;  /* taller for better proportions */
+.scroll-image {
+  background: url('images/scroll.jpg') center center / cover no-repeat;
+  min-height: 400px;   /* nice height */
   width: 100%;
-  background-attachment: fixed;
+  background-attachment: fixed;   /* parallax for desktop */
   display: flex;
   align-items: center;
   justify-content: center;
-  }
-	
+}
 
     /* Location card */
     .address{ background:#f0f0f0; padding:1rem; border-radius:8px; margin:1rem 0; }
@@ -130,13 +129,19 @@
     footer a{ color:#fff; text-decoration:underline; }
     footer a:hover, footer a:focus{ color:var(--secondary); }
 
-    @media (max-width:768px){
-      h1{ font-size:2rem; }
-      h2{ font-size:1.75rem; }
-      .subhead{ font-size:1.1rem; }
-      .hero{ min-height:50vh; padding:2rem 1rem; }
-      .scroll-image{ background-attachment:scroll; } /* mobile fallback */
-    }
+ /* Touch devices / mobile fallback */
+@media (hover: none), (pointer: coarse) {
+  .scroll-image {
+    background-attachment: scroll;  /* drop parallax on touch */
+  }
+}
+
+@media (max-width:768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  .subhead { font-size: 1.1rem; }
+  .hero { min-height: 50vh; padding: 2rem 1rem; }
+}
   </style>
 </head>
 <body>
@@ -145,7 +150,6 @@
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
-          <li><a href="#times">Training Times</a></li>
           <li><a href="#training">Training</a></li>
           <li><a href="#location">Location</a></li>
           <li><a href="https://www.facebook.com/ImperialJudo" target="_blank" rel="noopener noreferrer">Facebook</a></li>
