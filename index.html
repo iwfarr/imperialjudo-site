@@ -129,6 +129,14 @@
     footer a{ color:#fff; text-decoration:underline; }
     footer a:hover, footer a:focus{ color:var(--secondary); }
 
+  /* Hover effect for Facebook icon */
+  header nav ul li a img {
+  transition: transform 0.2s ease;
+}
+header nav ul li a img:hover {
+  transform: scale(1.2);
+}
+    
  /* Touch devices / mobile fallback */
 @media (hover: none), (pointer: coarse) {
   .scroll-image {
@@ -142,8 +150,10 @@
   .subhead { font-size: 1.1rem; }
   .hero { min-height: 50vh; padding: 2rem 1rem; }
 }
+    
   </style>
 </head>
+<body>
 <body>
   <header>
     <div class="container">
@@ -152,7 +162,11 @@
           <li><a href="#about">About</a></li>
           <li><a href="#training">Training</a></li>
           <li><a href="#location">Location</a></li>
-          <li><a href="https://www.facebook.com/ImperialJudo" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li>
+            <a href="https://www.facebook.com/ImperialJudo" target="_blank" rel="noopener noreferrer">
+              <img src="images/fb.png" alt="Facebook" style="height:30px; vertical-align:middle;">
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -267,3 +281,4 @@
   </footer>
 </body>
 </html>
+
